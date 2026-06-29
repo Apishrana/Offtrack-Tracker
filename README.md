@@ -5,8 +5,8 @@ This is a small command-line tracker for offtrack. It lets you create trips and 
 ## Features
 
 - Create trips with name, origin, destination, duration, and budget.
-- Store trip data locally as CSV.
-- List saved trips with the coin and hour cost.
+- Data stored locally in CSV file(s).
+- List the trips with the coin and hour cost.
 
 ## Setup
 
@@ -16,11 +16,11 @@ Run the setup script:
 sh ./setup.sh
 ```
 
-This creates a virtual environment, installs dependencies, and patches `.env`
+This will create a python virtual environment, install all pip packages, and patches `.env`
 
 ## Configuration
 
-The app have its configuration in `.env`:
+The app configuration are stored in `.env`:
 
 ```env
 DATA_PATH=./Data/
@@ -54,13 +54,13 @@ List all trips:
 python main.py list
 ```
 
-Create an itinerary for an existing trip:
+Create an itinerary for a trip:
 
 ```bash
 python main.py itinerary "Trip Name"
 ```
 
-\*itinerary creation is currently not fuctional.
+\*itinerary creation is currently not functional.
 
 ## Build
 
@@ -88,12 +88,6 @@ The executable is generated in the `dist/` directory.
 2 directories, 7 files
 ```
 
-## Data
+## Author
 
-Data is saved to:
-
-```text
-Data/trips.csv
-```
-
-The data folder location can be changed with `DATA_PATH` variable in `.env`.
+Created by [ApishRana](https://github.com/ApishRana)
