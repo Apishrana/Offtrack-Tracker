@@ -7,6 +7,19 @@ else
     echo "Unsupported OS"
     exit 1
 fi
+if [[ ! -f .env ]] || \
+   ! grep -q "^DATA_PATH=" .env || \
+   ! grep -q "^USD=" .env || \
+   ! grep -q "^COIN_RATE=" .env || \
+   ! grep -q "^HOUR_RATE=" .env; then
+cat > .env <<EOF
+DATA_PATH=./Data/
+USD=94.53
+COIN_RATE=2.5
+HOUR_RATE=20
+EOF
+    echo ".env created/updated"
+fi
 pip install --upgrade pip
 pip install -r requirements.txt
 echo ""
