@@ -1,6 +1,6 @@
 typer
 rich
 pandas
-tabulate
 python-dotenv
 argcomplete
+requests
