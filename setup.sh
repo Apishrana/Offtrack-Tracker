@@ -9,4 +9,6 @@ else
 fi
 pip install --upgrade pip
 pip install -r requirements.txt
-python main.py
+echo ""
+echo ""
+echo "setup successful"

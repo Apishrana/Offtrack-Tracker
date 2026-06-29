@@ -19,8 +19,9 @@ class DataLoader:
             self.createCsv()
 
     def createCsv(self):
-        trip = pd.DataFrame(
-            columns=["tripName", "source", "destination", "days", "budget"]
-        )
+        trip = pd.DataFrame(columns=["tripName", "from", "to", "days", "budget"])
         trip.to_csv(self.DataPath + "trips.csv", index=False)
         self.loadCsv()
+
+    def saveCsv(self, df, fileName):
+        df.to_csv(self.DataPath + f"{fileName}.csv", index=False)
