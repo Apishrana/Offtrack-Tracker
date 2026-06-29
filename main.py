@@ -78,13 +78,14 @@ class Tracker:
         fromCity = Prompt.ask("[green]Where are you starting from[/green]")
         toCity = Prompt.ask("[green]Where are you going to[/green]")
         days = IntPrompt.ask("[green]How many days is the trip[/green]")
+        budget = IntPrompt.ask("[green]Whats your approximate budget[/green]")
 
         self.trips.loc[len(self.trips)] = {
             "tripName": name,
             "from": fromCity,
             "to": toCity,
             "days": days,
-            "budget": None,
+            "budget": budget,
         }
         self.dataLoader.saveCsv(self.trips, "trips")
 
@@ -95,7 +96,7 @@ class Tracker:
         else:
             path = Path(sys.argv[0]).resolve().relative_to(Path.cwd())
             print(
-                f"[yellow]Okay, you can create the itinerary later using:[/yellow] \n[cyan]{path if path == path.stem else 'python '+str(path)} itinerary {name}[/cyan]"
+                f"[yellow]Okay, you can create the itinerary later using:[/yellow] \n[cyan]{path if str(path) == path.stem else 'python '+str(path)} itinerary {name}[/cyan]"
             )
 
     def newItinerary(self, tripName):
