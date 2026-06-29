@@ -81,7 +81,7 @@ class Tracker:
 
         self.trips.loc[len(self.trips)] = {
             "tripName": name,
-            "fromCity": fromCity,
+            "from": fromCity,
             "to": toCity,
             "days": days,
             "budget": None,
